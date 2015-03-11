@@ -1,0 +1,136 @@
+/**
+ * importer.scss
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from Sass to CSS.  Unlike CSS files, Sass files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * The Sass files imported below are compiled and included in the order
+ * they are listed.  Mixins, variables, etc. should be imported first
+ * so that they can be accessed by subsequent Sass stylesheets.
+ *
+ * (Just like the rest of the asset pipeline bundled in Sails, you can
+ * always omit, customize, or replace this behavior with SASS, SCSS,
+ * or any other Grunt tasks you like.)
+ */
+
+
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+$icon-font-path: "../fonts/";
+
+$font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base:        $font-family-sans-serif;
+@import "../../vendors/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$back2black:#2A2C2B!default;
+h1,h2,h3{
+  font-family:$font-family-base;
+  font-weight: 100;
+  color:$brand-info;
+  small{
+    color:$brand-success
+  }
+}
+.lg-mrg{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.list-job-completed{
+  z-index: 2; // Place active items above their siblings for proper border styling
+  color: $list-group-active-color;
+  background-color: $brand-danger;
+  border-color: $list-group-active-border;
+}
+
+.col-rsns-hrzntl-1n2{
+  @include make-xs-column(3);
+  @include make-sm-column(2);
+  @include make-md-column(2);
+  @include make-lg-column(2);
+
+}
+.col-rsns-hrzntl-8n10{
+  @include make-xs-column(6);
+  @include make-sm-column(8);
+  @include make-md-column(8);
+  @include make-lg-column(8);
+  @media (max-width: $screen-xs-max) {
+    padding-left: 0;
+    padding-right:0;
+  }
+}
+.col-rspns-12{
+  @include make-xs-column(12);
+  @include make-sm-column(12);
+  @include make-md-column(12);
+  @include make-lg-column(12);
+}
+
+.col-rsns-hrzntl-1n2,
+.col-left-vert-scroll,
+.col-right-vert-scroll{
+  margin-top:10px;
+}
+
+
+/*horizontal scroll container */
+.scroll-hrzntl-outter-container{
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.scroll-hrzntl-inner-container::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hrzntl-inner-container{
+  height:130%;
+  overflow-y:hidden;
+  overflow-x: auto;
+}
+
+.scroll-hrzntl-content{
+  white-space: nowrap;
+  padding-bottom:30%;
+  overflow:hidden;
+  li{
+    float:none;
+    margin-left:10px;
+    margin-right:10px;
+  }
+}
+.scroll-hrzntl-inner-container::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-scroll{
+  @include  button-variant($back2black, $brand-danger,  lighten($back2black, 3%));
+  @include  button-size(1px, 0, 1.2em, 1, 18px);
+  width:36px;
+  height: 36px;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+  @include box-shadow($shadow);
+
+  // Reset the shadow
+  &:active,
+  &.active {
+    color: darken($back2black, 5%);
+  }
+  // Reset the shadow
+  &:hover,
+  &.hover {
+    color: lighten($back2black, 2%);
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: darken($back2black, 5%);
+    }
+  }
+}

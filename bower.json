@@ -1,0 +1,32 @@
+{
+  "name": "SailsAngularSASSGulpSeed",
+  "version": "1.0.0",
+  "authors": [
+    "Will Streeter"
+  ],
+  "main": "app.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "~1.2.*",
+    "ui-bootstrap":"~v0.12.1",
+    "sails.io.js": "^0.11.0",
+    "bootstrap-sass":">=3.3.0",
+    "angular-sails": "~1.1.1"
+  },
+  "devDependencies":{
+    "angular-mocks": ">=1.2.*"
+  },
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "package.json",
+    "node_modules",
+    "build",
+    "mock",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}
